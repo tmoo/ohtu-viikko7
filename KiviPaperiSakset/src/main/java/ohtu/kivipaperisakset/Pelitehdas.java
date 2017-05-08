@@ -11,11 +11,12 @@ public class Pelitehdas {
     
     private final Map<String, Peli> pelit;
 
-    public Pelitehdas() {
+    public Pelitehdas(IO io) {
+        
         this.pelit = new HashMap<>();
-        pelit.put("a", new KPSPelaajaVsPelaaja());
-        pelit.put("b", new KPSTekoaly());
-        pelit.put("c", new KPSParempiTekoaly());
+        pelit.put("a", new KPSPelaajaVsPelaaja(io));
+        pelit.put("b", new KPSTekoaly(io));
+        pelit.put("c", new KPSParempiTekoaly(io));
     }
     
     public Peli hae(String pelinNimi) {

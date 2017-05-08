@@ -6,6 +6,16 @@ package ohtu.kivipaperisakset;
  */
 public abstract class Peli {
 
+    private IO io;
+
+    public Peli(IO io) {
+        this.io = io;
+    }
+
+    public IO getIo() {
+        return io;
+    }
+    
     public void pelaa(Pelaaja p1, Pelaaja p2) {
         Tuomari tuomari = new Tuomari();
         
@@ -14,8 +24,8 @@ public abstract class Peli {
 
         while (onkoOkSiirto(ekanSiirto) && onkoOkSiirto(tokanSiirto)) {
             tuomari.kirjaaSiirto(ekanSiirto, tokanSiirto);
-            System.out.println(tuomari);
-            System.out.println();
+            io.println(tuomari.toString());
+            io.println("");
             
             ekanSiirto = p1.annaSiirto();
             tokanSiirto = p2.annaSiirto();
@@ -23,9 +33,9 @@ public abstract class Peli {
             p2.asetaSiirto(ekanSiirto);
         }
 
-        System.out.println();
-        System.out.println("Kiitos!");
-        System.out.println(tuomari);
+        io.println("");
+        io.println("Kiitos!");
+        io.println(tuomari.toString());
     }
 
     public static boolean onkoOkSiirto(String siirto) {

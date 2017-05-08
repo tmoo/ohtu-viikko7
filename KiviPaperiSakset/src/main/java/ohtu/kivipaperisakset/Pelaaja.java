@@ -10,7 +10,7 @@ package ohtu.kivipaperisakset;
  * @author tuomo
  */
 public interface Pelaaja {
-
+    
     public String annaSiirto();
 
     public void asetaSiirto(String siirto);

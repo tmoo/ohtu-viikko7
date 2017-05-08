@@ -5,10 +5,12 @@ public class TekoalyParannettu implements Pelaaja {
 
     private String[] muisti;
     private int vapaaMuistiIndeksi;
+    private IO io;
 
-    public TekoalyParannettu(int muistinKoko) {
+    public TekoalyParannettu(IO io, int muistinKoko) {
         muisti = new String[muistinKoko];
         vapaaMuistiIndeksi = 0;
+        this.io = io;
     }
 
     @Override
@@ -65,7 +67,7 @@ public class TekoalyParannettu implements Pelaaja {
             }
         }
 
-        System.out.println("Tietokone valitsi: " + tulos);
+        io.println("Tietokone valitsi: " + tulos);
         return tulos;
         // Tehokkaampiakin tapoja löytyy, mutta niistä lisää 
         // Johdatus Tekoälyyn kurssilla!

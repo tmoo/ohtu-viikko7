@@ -3,9 +3,11 @@ package ohtu.kivipaperisakset;
 public class Tekoaly implements Pelaaja {
 
     int siirto;
+    private IO io;
 
-    public Tekoaly() {
+    public Tekoaly(IO io) {
         siirto = 0;
+        this.io = io;
     }
 
     @Override
@@ -22,7 +24,7 @@ public class Tekoaly implements Pelaaja {
         } else {
             tulos = "s";
         }
-        System.out.println("Tietokone valitsi: " + tulos);
+        io.println("Tietokone valitsi: " + tulos);
         return tulos;
     }
 

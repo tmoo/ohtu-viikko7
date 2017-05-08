@@ -8,18 +8,18 @@ import java.util.Scanner;
  */
 public class Ihmispelaaja implements Pelaaja {
 
-    Scanner scanner;
+    IO io;
     String monennenko;
 
-    public Ihmispelaaja(Scanner scanner, String monennenko) {
-        this.scanner = scanner;
+    public Ihmispelaaja(IO io, String monennenko) {
+        this.io = io;
         this.monennenko = monennenko;
     }
     
     @Override
     public String annaSiirto() {
-        System.out.println(monennenko + " pelaajan siirto: ");
-        return scanner.nextLine();
+        io.println(monennenko + " pelaajan siirto: ");
+        return io.nextLine();
     }
 
     @Override
